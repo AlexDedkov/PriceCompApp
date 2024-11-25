@@ -1,0 +1,296 @@
+// Import of font family
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+// Reusable styles
+$textheader: 22px;
+$textheaderleft: 36px;
+$textmainpage: 26px;
+$margintitles: 50px 0px 50px 0px;
+$backgrounddark: rgba(25, 25, 25, 1); // Darker background
+$backgrounddarker: rgba(15, 15, 15, 0.9); // Even darker for header
+$textcolorlight: rgba(255, 255, 255, 0.9);
+$primarybuttoncolor: #0d6efd; // Bootstrap primary button color
+$secondarybuttoncolor: #6c757d; // Bootstrap secondary button color
+$shadowtextheavy: 2px 2px 5px rgba(0, 0, 0, 0.7);
+$styleBasker: "Oswald";
+$footer-margin: 100px; // Adjust margin for footer
+$default-bg-color: #282c34; // Change this to your desired background color
+
+// General styles for the full page
+body, html {
+  font-family: $styleBasker;
+  text-shadow: $shadowtextheavy;
+  height: 100%;
+  margin: 0;
+  background-color: $backgrounddark !important; // Enforces dark theme background
+  color: $textcolorlight;
+}
+
+.searchbar {
+  background-color: $backgrounddark;
+  color: $textcolorlight;  
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  // Adds a subtle shadow to separate sections
+}
+
+.placeholder {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+body {
+  padding-top: 150px;
+}
+
+.sticky-bin {
+  position: fixed;
+  top: 120px;
+  right: 0;
+  width: 300px;
+  background-color: #212529;
+  border: 1px solid #343a40;
+  padding: 15px;
+  z-index: 1000;
+  color: $textcolorlight;
+}
+
+@media (max-width: 992px) {
+  .sticky-bin {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+// Header Styles
+
+.header {
+  .navbar {
+    background-color: $backgrounddarker;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-brand {
+    font-size: $textheaderleft;
+    color: $textcolorlight;
+    &:hover {
+      color: lighten($textcolorlight, 10%);
+    }
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+
+    .btn {
+      font-family: $styleBasker;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: background-color 0.3s ease;
+
+      &.btn-primary {
+        background-color: $primarybuttoncolor;
+        border: none;
+        &:hover {
+          background-color: darken($primarybuttoncolor, 10%);
+        }
+      }
+
+      &.btn-secondary {
+        background-color: $secondarybuttoncolor;
+        border: none;
+        &:hover {
+          background-color: darken($secondarybuttoncolor, 10%);
+        }
+      }
+
+      &.btn-danger {
+        background-color: #dc3545;
+        border: none;
+        &:hover {
+          background-color: darken(#dc3545, 10%);
+        }
+      }
+
+      &.btn-success {
+        background-color: #28a745;
+        &:hover {
+          background-color: darken(#28a745, 10%);
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+
+    .navbar-toggler-icon {
+      filter: brightness(1.2); // Make the icon more visible
+    }
+  }
+
+  .collapse {
+    background-color: $backgrounddarker;
+  }
+}
+
+// Customize modal (login/register)
+.modal-content {
+  background-color: $backgrounddark;
+  color: $textcolorlight;
+}
+
+.modal-header, .modal-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+// Main content styles
+main {
+  margin-bottom: $footer-margin; // Ensures space for footer
+}
+
+// Product details styles
+#product-details {
+  background-color: $backgrounddark;
+  color: $textcolorlight;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  // Creates a clean separation between components
+
+  img {
+    max-width: 100%; // Ensure responsiveness
+    height: auto;    // Maintain aspect ratio
+    width: 100%;     // Set to fill the column (adjust this value as necessary)
+  }
+
+  article {
+    h2 {
+      font-size: 1.8rem;
+      color: $textcolorlight;
+    }
+    p {
+      color: $textcolorlight;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Background color for the price comparison table
+.pricecomp-container {
+  background-color: $default-bg-color; // Apply a new background color
+  padding: 20px; // Add some padding if necessary
+}
+
+.navbar-nav .nav-item span {
+  font-size: 1.4rem; // Increase font size
+  padding-top: 5px;  // Adjust vertical position slightly
+}
+
+.sticky-favorites {
+  position: fixed;
+  top: 150px;
+  right: 15px;
+  width: 300px; // Adjust as needed
+  background-color: #212529; // Background similar to the dark theme
+  border: 1px solid #343a40;
+  padding: 15px;
+  z-index: 1000;
+  color: $textcolorlight;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      img {
+        margin-right: 10px;
+      }
+
+      .btn-sm {
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sticky-favorites {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.sticky-favorites ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sticky-favorites li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px; // Add space between products
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); // Optional: add a subtle border for clarity
+}
+
+.sticky-favorites img {
+  width: 50px;
+  height: auto;
+}
+
+.sticky-favorites .btn {
+  padding: 5px 20px; // Make the button smaller
+  font-size: 12px;
+  width: 75px; // Make the button slightly wider
+}
+
+#product-details, .searchbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); // Adds a nice shadow for separation
+}
+
+.dark-theme {
+  background-color: #0e0e0e91;
+  color: #ffffff;
+
+  .dark-modal-content {
+    background-color: #333;
+    border-color: #444;
+  }
+
+  .modal-header, .modal-footer {
+    border-color: #555;
+  }
+
+  .dark-input {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #555;
+
+    &::placeholder {
+      color: #bbb;
+    }
+  }
+
+  .btn-primary {
+    background-color: #444;
+    border-color: #555;
+  }
+}
+
