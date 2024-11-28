@@ -1,4 +1,4 @@
-# My price comparison web app for different stores.
+# Приложение на  React для сравнения цен на технику в разных магазинах.
 
 Client - Клиентская часть
 
